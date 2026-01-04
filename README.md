@@ -18,7 +18,7 @@ A simple dashboard I built to help with my night shift schedule. I work 6PM-5AM 
 - Deployed on Vercel
 
 ## Why I Built It
-I was stuck in work-sleep-repeat mode. This app helps me see where my time actually goes and make better use of my free hours. This app has also hellped me become pro acive and motivated me to be more than just a night shift worker.
+I was stuck in work-sleep-repeat mode. This app helps me see where my time actually goes and make better use of my free hours. This app has also helped me become pro-acive and motivated me to be more than just a night shift worker.
 
 
 ## Next Steps
