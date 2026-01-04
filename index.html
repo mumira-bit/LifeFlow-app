@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeFlow - Break the work-sleep cycle</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-moon"></i>
+                <h1>LifeFlow</h1>
+            </div>
+            <p class="tagline">Break the work-sleep cycle. Live fully every day!</p>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="navigation">
+            <a href="#" class="nav-item active" data-nav="timeline">
+                <i class="fas fa-calendar-day"></i>
+                <span>Timeline</span>
+            </a>
+            <a href="#" class="nav-item" data-nav="activities">
+                <i class="fas fa-tasks"></i>
+                <span>Activities</span>
+            </a>
+            <a href="#" class="nav-item" data-nav="progress">
+                <i class="fas fa-chart-line"></i>
+                <span>Progress</span>
+            </a>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Timeline Section (default) -->
+            <div class="section-view active" data-section="timeline">
+                <!-- Current Time Section -->
+                <section class="current-time-card">
+                    <div class="time-header">
+                        <i class="fas fa-clock"></i>
+                        <h3>Right now</h3>
+                    </div>
+                    <div class="time-display">
+                        <span class="time">9:15 PM</span>
+                        <span class="time-context">During your shift</span>
+                    </div>
+                    <div class="time-stats">
+                        <div class="stat">
+                            <i class="fas fa-battery-half"></i>
+                            <span class="energy-stat">Energy: Medium</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-bullseye"></i>
+                            <span>Best for: Focused work</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-hourglass-half"></i>
+                            <span>Next break: 3h 45m</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Motivation Section -->
+                <section class="motivation-card">
+                    <div class="motivation-header">
+                        <i class="fas fa-sparkles"></i>
+                        <h3>Your Day Awaits!</h3>
+                    </div>
+                    <p class="motivation-text">Schedule some activities and make today count</p>
+                    
+                    <div class="inspiration">
+                        <i class="fas fa-quote-left"></i>
+                        <p>Life is happening now - make time for what matters!</p>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Activities Section -->
+            <div class="section-view" data-section="activities">
+                <section class="activities-header">
+                    <h2>Your Activities</h2>
+                    <button class="btn-add-activity">
+                        <i class="fas fa-plus"></i>
+                        Add Activity
+                    </button>
+                </section>
+
+                <!-- Activity Timeline -->
+                <section class="timeline-section">
+                    <h3>Today's Timeline</h3>
+                    <div class="timeline-container" id="timelineContainer">
+                        <p class="empty-state">No activities scheduled yet. Create one to get started!</p>
+                    </div>
+                </section>
+
+                <!-- Activities List -->
+                <section class="activities-section">
+                    <h3>Your Schedule</h3>
+                    <div class="activities-list" id="activitiesList">
+                        <p class="empty-state">No activities scheduled yet. Create one to get started!</p>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Progress Section -->
+            <div class="section-view" data-section="progress">
+                <section class="progress-header">
+                    <h2>Your Progress</h2>
+                </section>
+                <div class="progress-content">
+                    <p class="empty-state">Schedule activities to track your progress!</p>
+                </div>
+            </div>
+
+            <!-- Metrics Dashboard -->
+            <section class="metrics-grid" id="metricsSection">
+                <!-- Free Time Card -->
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <i class="fas fa-hourglass-end"></i>
+                        <h4>Free Time</h4>
+                    </div>
+                    <div class="metric-value" id="freeTime">16h</div>
+                    <p class="metric-subtitle">(2PM - 6AM)</p>
+                </div>
+
+                <!-- Activities Card -->
+                <div class="metric-card highlight">
+                    <div class="metric-header">
+                        <i class="fas fa-tasks"></i>
+                        <h4>Activities</h4>
+                    </div>
+                    <div class="metric-value" id="activitiesCount">0 planned</div>
+                    <p class="metric-subtitle">Plan your first!</p>
+                </div>
+
+                <!-- Outdoor Time Card -->
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <i class="fas fa-tree"></i>
+                        <h4>Outdoor Time</h4>
+                    </div>
+                    <div class="metric-value" id="outdoorTime">0m</div>
+                    <p class="metric-subtitle">Schedule a walk?</p>
+                </div>
+            </section>
+
+            <!-- Life Balance Score -->
+            <section class="balance-card" id="balanceSection">
+                <div class="balance-header">
+                    <i class="fas fa-heart"></i>
+                    <h3>Life Balance Score</h3>
+                </div>
+                <div class="score-display">
+                    <div class="score-circle">
+                        <div class="score-text" id="balanceScore">45</div>
+                        <div class="score-label">/100</div>
+                    </div>
+                    <div class="score-info">
+                        <p>Goal: Reach 80+ this week!</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 45%" id="progressFill"></div>
+                        </div>
+                        <p class="score-tip">Add activities to improve your score</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action -->
+            <section class="cta-section" id="ctaSection">
+                <h2>Let's break the routine!</h2>
+                <p>Schedule your first activity now and start living more intentionally.</p>
+                <button class="cta-button">
+                    <i class="fas fa-play-circle"></i>
+                    Get Started
+                </button>
+            </section>
+        </main>
+
+        <!-- Activity Modal -->
+        <div class="modal-overlay" id="activityModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Add New Activity</h2>
+                    <button class="modal-close" id="closeModal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <form id="activityForm" class="activity-form">
+                    <div class="form-group">
+                        <label for="activityName">Activity Name</label>
+                        <input type="text" id="activityName" placeholder="e.g., Morning jog, Read a book" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="activityTime">Time</label>
+                            <input type="time" id="activityTime" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="activityDuration">Duration (minutes)</label>
+                            <input type="number" id="activityDuration" min="5" max="480" value="30" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="activityCategory">Category</label>
+                        <select id="activityCategory" required>
+                            <option value="">Select a category</option>
+                            <option value="work">Work</option>
+                            <option value="health">Health & Fitness</option>
+                            <option value="learning">Learning</option>
+                            <option value="leisure">Leisure</option>
+                            <option value="family">Family</option>
+                            <option value="outdoor">Outdoor</option>
+                            <option value="personal">Personal</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="activityNote">Notes (optional)</label>
+                        <textarea id="activityNote" placeholder="Add any notes..."></textarea>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="button" class="btn-secondary" id="cancelForm">Cancel</button>
+                        <button type="submit" class="btn-primary">Add Activity</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Success Toast -->
+        <div class="toast" id="successToast">
+            <i class="fas fa-check-circle"></i>
+            <span id="toastMessage">Activity added successfully!</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
